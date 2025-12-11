@@ -1,6 +1,10 @@
 import NavigationMenuItem from './NavigationMenuItem';
 
-export default function NavigationMenu({ isMobileMenuOpen }) {
+interface NavigationMenuProps {
+  isMobileMenuOpen: boolean
+}
+
+export default function NavigationMenu({ isMobileMenuOpen }: NavigationMenuProps) {
   return (
     <div className={`w-full lg:flex lg:items-center lg:w-auto ${isMobileMenuOpen ? '' : 'hidden'}`}>
       <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-1 lg:flex flex-col lg:flex-row">

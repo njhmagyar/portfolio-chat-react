@@ -5,7 +5,14 @@ import NavigationBrand from './NavigationBrand'
 import NavigationControls from './NavigationControls'
 import NavigationMenu from './NavigationMenu'
 
-export default function Navigation({ isLightMode, toggleTheme }) {
+interface NavigationProps {
+  isLightMode: boolean,
+  toggleTheme: () => void
+}
+export default function Navigation({ 
+  isLightMode, 
+  toggleTheme
+}: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)

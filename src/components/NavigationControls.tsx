@@ -2,7 +2,17 @@ import { Link } from 'react-router-dom';
 
 import ThemeIcon from './ThemeIcon';
 
-export default function NavigationControls({ isLightMode, toggleTheme, toggleMobileMenu }) {
+interface NavigationControlProps {
+  isLightMode: boolean,
+  toggleTheme: () => void,
+  toggleMobileMenu: () => void
+}
+
+export default function NavigationControls({ 
+  isLightMode, 
+  toggleTheme, 
+  toggleMobileMenu 
+}: NavigationControlProps) {
   return (
     <>
       <div className="gap-3 mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
