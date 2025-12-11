@@ -32,7 +32,7 @@ function App() {
   const isLightMode = theme === 'light';
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio-chat-react">
       <Navigation 
         isLightMode={isLightMode}
         toggleTheme={toggleTheme}
