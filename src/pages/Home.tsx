@@ -1,7 +1,9 @@
+import Base from '../components/Base'
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <Base>
       <h1>Home Page</h1>
-    </div>
+    </Base>
   )
 }

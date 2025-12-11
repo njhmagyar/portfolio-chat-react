@@ -1,7 +1,9 @@
+import Base from '../components/Base'
+
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <Base>
       <h1>About Page</h1>
-    </div>
+    </Base>
   )
 }

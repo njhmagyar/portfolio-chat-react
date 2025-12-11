@@ -1,6 +1,8 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
 
-@theme {
-  --font-family-sans: Figtree, ui-sans-serif, system-ui, sans-serif;
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
 }
