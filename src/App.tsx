@@ -38,7 +38,7 @@ function App() {
         toggleTheme={toggleTheme}
         onSetTheme={setTheme} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home isLightMode={isLightMode} />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
       </Routes>
