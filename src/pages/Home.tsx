@@ -19,7 +19,7 @@ export default function Home({ isLightMode }: HomeProps) {
     const fetchCaseStudies = async () => {
       try {
         const response = await axios.get(`${API_BASE_URL}/api/case-studies`);
-        setCaseStudies(response.data.case_studies);
+        setCaseStudies(response.data);
       } catch (error) {
         console.error('Failed to fetch caseStudies:', error);
       }

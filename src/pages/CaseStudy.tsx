@@ -6,6 +6,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '../constants'
 
 import Base from '../components/Base';
+import CaseStudySection from '../components/CaseStudySection';
 
 
 export default function CaseStudy() {
@@ -14,14 +15,18 @@ export default function CaseStudy() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const SectionList = (caseStudy?.sections || []).map(section => (
+    <CaseStudySection key={section.id} section={section} />
+  ))
+
   useEffect(() => {
     const fetchCaseStudy = async () => {
       if (!slug) return;
 
       try {
         setLoading(true);
-        const response = await axios.get(`${API_BASE_URL}/api/case-studies/${slug}`);
-        setCaseStudy(response.data.case_study);
+        const response = await axios.get(`${API_BASE_URL}/api/case-studies/${slug}/`);
+        setCaseStudy(response.data);
       } catch (error) {
         setError('Failed to fetch case study');
         console.error('Failed to fetch case study: ', error);
@@ -58,17 +63,15 @@ export default function CaseStudy() {
   return (
     <Base>
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+        <img src={caseStudy.hero_image} className="w-full rounded-lg" />
+        <h1 className="text-4xl font-bold mt-12 mb-4 text-gray-900 dark:text-gray-100">
           {caseStudy.title}
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+        <p className="text-2xl text-gray-600 dark:text-gray-400 mb-8">
           {caseStudy.description}
         </p>
-        <div
-          className="prose prose-lg dark:prose-invert max-w-none"
-          dangerouslySetInnerHTML={{ __html: caseStudy.content }}
-        />
       </div>
+      { SectionList }
     </Base>
   );
 
