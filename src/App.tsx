@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Resume from './pages/Resume';
 import About from './pages/About';
+import CaseStudy from './pages/CaseStudy';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/" element={<Home isLightMode={isLightMode} />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
+          <Route path="/case-studies/:slug" element={<CaseStudy />} />
       </Routes>
     </BrowserRouter>
   )
