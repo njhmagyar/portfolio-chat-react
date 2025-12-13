@@ -1,15 +1,15 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconPrefix, IconName } from '@fortawesome/fontawesome-svg-core'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { IconPrefix, IconName } from '@fortawesome/fontawesome-svg-core'
 
 interface IconProps {
-  prefix: IconPrefix,
-  name: IconName
+  prefix: string,
+  name: string
 }
 
-export default function Icon({ prefix, name }:IconProps) {
+export default function Icon({ prefix, name }):IconProps {
   return (
     <>
-      <FontAwesomeIcon icon={[prefix, name]} />
+      { prefix } { name }
     </>
   );
 }
