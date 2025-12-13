@@ -21,7 +21,6 @@ export default function MediaCarousel({ mediaUrls }:MediaCarouselProps) {
     const finalIndex = index < 0 ? maxIndex : index > maxIndex ? 0 : index;
     setCurrentIndex(finalIndex);
   }
-
   const CarouselDots = mediaUrls.map((_, index) => (
     <button 
       key={index}
