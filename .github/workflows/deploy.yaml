@@ -16,20 +16,12 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      - name: Configure npm for public registry only
-        run: |
-          echo "//registry.npmjs.org/:_authToken=" >> ~/.npmrc
-          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
-          echo "@fortawesome:registry=https://registry.npmjs.org/" >> ~/.npmrc
-          npm config set fund false
-          npm config set audit false
-
       - name: Install dependencies
-        run: npm ci --only=production --no-audit --no-fund
+        run: npm install
 
       - name: Build
         run: npm run build
