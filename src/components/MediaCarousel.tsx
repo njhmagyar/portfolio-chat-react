@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import Icon from './Icon'
+
 interface MediaCarouselProps {
   mediaUrls: string[]
 }
@@ -33,14 +35,14 @@ export default function MediaCarousel({ mediaUrls }:MediaCarouselProps) {
       <button 
         onClick={() => goTo(currentIndex - 1)}
         className="absolute left-4 top-50 w-8 h-8 flex justify-center items-center rounded-2xl bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-        Left
+        <Icon prefix="fas" name="arrow-left" />
       </button>}
       { currentMedia }
       {mediaUrls.length > 1 && 
       <button 
         onClick={() => goTo(currentIndex + 1)}
         className="absolute right-4 top-50 w-8 h-8 flex justify-center items-center rounded-2xl bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-          Right
+          <Icon prefix="fas" name="arrow-right" />
       </button>}
       {mediaUrls.length > 1 && <div className="mt-4 flex justify-center align-center no-wrap gap-2">{ CarouselDots }</div>}
     </div>
