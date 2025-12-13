@@ -17,11 +17,19 @@ export interface SectionType {
   title: string
 }
 
+export interface MetricType {
+  id: number,
+  value: string,
+  label: string,
+  order: number
+}
+
 export interface CaseStudyType {
   category: string,
   description: string,
   hero_image: string,
   id: number,
+  metrics: MetricType[],
   project: ProjectType,
   sections: SectionType[]
   slug: string,

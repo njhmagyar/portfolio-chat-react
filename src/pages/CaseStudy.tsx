@@ -6,6 +6,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '../constants'
 
 import Base from '../components/Base';
+import CaseStudyLayout from '../components/CaseStudyLayout';
 import CaseStudySection from '../components/CaseStudySection';
 
 
@@ -61,18 +62,9 @@ export default function CaseStudy() {
   }
 
   return (
-    <Base>
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <img src={caseStudy.hero_image} className="w-full rounded-lg" />
-        <h1 className="text-4xl font-bold mt-12 mb-4 text-gray-900 dark:text-gray-100">
-          {caseStudy.title}
-        </h1>
-        <p className="text-2xl text-gray-600 dark:text-gray-400 mb-8">
-          {caseStudy.description}
-        </p>
-      </div>
+    <CaseStudyLayout caseStudy={caseStudy}>
       { SectionList }
-    </Base>
+    </CaseStudyLayout>
   );
 
 }

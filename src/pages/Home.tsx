@@ -5,6 +5,7 @@ import { API_BASE_URL } from '../constants'
 import Base from '../components/Base'
 import CaseStudyCard from '../components/CaseStudyCard'
 import HomepageHero from '../components/HomepageHero'
+import TickerTape from '../components/TickerTape'
 
 interface HomeProps {
   isLightMode: boolean
@@ -29,10 +30,9 @@ export default function Home({ isLightMode }: HomeProps) {
   }, []);
   return (
     <Base>
-      <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
         <HomepageHero isLightMode={isLightMode} />
+        <TickerTape />
         { CaseStudyList }
-      </div>
     </Base>
   )
 }
